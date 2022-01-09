@@ -22,6 +22,7 @@ same_chars = set(random_list).intersection(guess_one_list)
 
 if len(same_chars) > 0: 
     print('Correct guesses: ',list(same_chars))
+
 else: 
     print('You guessed 0 chars')
 
