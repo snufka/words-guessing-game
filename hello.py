@@ -6,6 +6,7 @@ word_list = ["brand","sandy","value","dealy","daily", "creek", "lands"]
 random_word = random.choice(word_list)
 print(random_word)
 
+#user input--- needs regex and char limit
 guess_num_one = input("Enter your first guess of 5 charachters: ")
 if len(guess_num_one) != 5:
     print ("Error! Only 5 characters allowed!")
@@ -32,12 +33,18 @@ else:
     print('You guessed 0 chars')
 
 #checking if the char location is correct
-def main():
-    correct = []    
+def guess_outcome():
+    outcome = []    
     for x,y in enumerate(random_list):
         if guess_one_list[x] == y:
-            correct.append([y,random_list.index(y)]) 
+            outcome.append(y) 
         else:
-              correct.append(["_", random_list.index(y)])
-    print(correct)
-main()
+              outcome.append(" _ ")
+    #print(outcome)
+    guess_one_outcome_str= ' '.join(outcome)
+    print(guess_one_outcome_str) 
+guess_outcome()
+
+
+
+
