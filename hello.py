@@ -1,11 +1,16 @@
 import random
+import sys
 
 word_list = ["brand","sandy","value","dealy","daily", "creek", "lands"]
 
 random_word = random.choice(word_list)
 print(random_word)
 
-guess_num_one = input("Enter your first guess: ")
+guess_num_one = input("Enter your first guess of 5 charachters: ")
+if len(guess_num_one) != 5:
+    print ("Error! Only 5 characters allowed!")
+    sys.exit()
+
 print (guess_num_one)
 
 def Convert(string):
@@ -31,6 +36,8 @@ def main():
     correct = []    
     for x,y in enumerate(random_list):
         if guess_one_list[x] == y:
-            correct.append([y,random_list.index(y)])    
+            correct.append([y,random_list.index(y)]) 
+        else:
+              correct.append(["_", random_list.index(y)])
     print(correct)
 main()
